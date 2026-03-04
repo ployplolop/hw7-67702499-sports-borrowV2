@@ -1,0 +1,54 @@
+/* ========================================================
+   SportAlert — Custom jQuery Confirm Theme Overrides
+   ======================================================== */
+
+/* Modern theme box */
+.jconfirm.jconfirm-modern .jconfirm-box {
+    border-radius: 16px !important;
+    padding: 0 !important;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25) !important;
+    border: none !important;
+    font-family: 'Inter', 'Noto Sans Thai', 'Segoe UI', sans-serif;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-title-c {
+    padding: 24px 28px 8px !important;
+    font-weight: 700 !important;
+    font-size: 1.15rem !important;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-content-pane {
+    padding: 0 28px !important;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-content {
+    font-size: 0.95rem !important;
+    color: #555 !important;
+    line-height: 1.6 !important;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-buttons {
+    padding: 16px 28px 24px !important;
+    text-align: center !important;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-buttons button {
+    border-radius: 10px !important;
+    padding: 10px 32px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease !important;
+}
+
+.jconfirm.jconfirm-modern .jconfirm-buttons button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* SVG Icon colors per level */
+.sa-icon-danger  { color: #ef4444; }
+.sa-icon-warning { color: #f59e0b; }
+.sa-icon-info    { color: #2563eb; }
+.sa-icon-success { color: #16a34a; }

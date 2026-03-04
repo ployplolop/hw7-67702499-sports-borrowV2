@@ -1,17 +1,21 @@
-    </div><!-- /.container -->
-    <footer style="text-align:center; padding:20px; color:#95a5a6; font-size:.85rem;">
-        &copy; <?= date('Y') ?> Sports Equipment Borrowing System
-    </footer>
+        </main><!-- /.content-area -->
 
-    <!-- Flash Alert System -->
+        <footer class="app-footer">
+            &copy; <?= date('Y') ?> Sports Equipment Borrowing System
+        </footer>
+
+    </div><!-- /.main-area -->
+
+    <!-- Flash Messages via Toast -->
     <?php
     if (!empty($_SESSION['flash'])):
         $flash = $_SESSION['flash'];
         unset($_SESSION['flash']);
+        $level = $flash['level'] === 'danger' ? 'error' : $flash['level'];
     ?>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        SportAlert.<?= $flash['level'] ?>(
+        Toast.<?= $level ?>(
             '<?= addslashes($flash['title']) ?>',
             '<?= addslashes($flash['message']) ?>'
         );

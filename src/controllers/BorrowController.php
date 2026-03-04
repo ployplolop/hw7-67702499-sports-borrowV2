@@ -19,7 +19,9 @@ class BorrowController
     /** List all borrow records */
     public function index(): void
     {
-        $records = $this->model->getAll();
+        $records       = $this->model->getAll();
+        $users         = $this->userModel->getAll();
+        $equipmentList = $this->equipmentModel->getAll();
         require __DIR__ . '/../views/borrows/index.php';
     }
 
@@ -35,15 +37,23 @@ class BorrowController
     public function store(): void
     {
         $qty = (int) ($_POST['quantity'] ?? 1);
-        $eqId = (int) $_POST['equipment_id'];
+        $eqId = (int) ($_POST['equipment_id'] ?? 0);
+
+        if ($eqId <= 0 || $qty <= 0) {
+            $_SESSION['flash'] = ['type' => 'danger', 'msg' => 'Invalid equipment or quantity.'];
+            header('Location: index.php?page=borrows');
+            exit;
+        }
 
         // Decrease available stock
         if (!$this->equipmentModel->decreaseStock($eqId, $qty)) {
-            echo 'Not enough stock available.';
-            return;
+            $_SESSION['flash'] = ['type' => 'danger', 'msg' => 'Not enough stock available.'];
+            header('Location: index.php?page=borrows');
+            exit;
         }
 
         $this->model->create($_POST);
+        $_SESSION['flash'] = ['type' => 'success', 'msg' => 'Borrow recorded successfully.'];
         header('Location: index.php?page=borrows');
         exit;
     }

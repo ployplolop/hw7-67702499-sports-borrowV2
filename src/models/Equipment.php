@@ -77,9 +77,9 @@ class Equipment
     public function decreaseStock(int $id, int $qty): bool
     {
         $stmt = $this->db->prepare(
-            'UPDATE equipment SET available_qty = available_qty - :qty WHERE id = :id AND available_qty >= :qty'
+            'UPDATE equipment SET available_qty = available_qty - :qty1 WHERE id = :id AND available_qty >= :qty2'
         );
-        $stmt->execute([':id' => $id, ':qty' => $qty]);
+        $stmt->execute([':id' => $id, ':qty1' => $qty, ':qty2' => $qty]);
         return $stmt->rowCount() > 0;
     }
 

@@ -64,9 +64,9 @@ CREATE TABLE IF NOT EXISTS borrow_records (
 -- Sample data
 -- -----------------------------------------------------------
 INSERT INTO users (username, password, full_name, email, phone, role) VALUES
-('admin',  '$2y$10$eW5lR3hBbXBsZVBhc3N3b3Jk',  'System Admin',   'admin@example.com',  '0800000001', 'admin'),
-('john',   '$2y$10$eW5lR3hBbXBsZVBhc3N3b3Jk',  'John Doe',       'john@example.com',   '0800000002', 'user'),
-('jane',   '$2y$10$eW5lR3hBbXBsZVBhc3N3b3Jk',  'Jane Smith',     'jane@example.com',   '0800000003', 'user');
+('admin',  '$2y$10$LyYB5q80CExaiTeusAjc.e6Toji.AtNWN1wj0FloSPHrobLJhfBSe',  'System Admin',   'admin@example.com',  '0800000001', 'admin'),
+('john',   '$2y$10$LyYB5q80CExaiTeusAjc.e6Toji.AtNWN1wj0FloSPHrobLJhfBSe',  'John Doe',       'john@example.com',   '0800000002', 'user'),
+('jane',   '$2y$10$LyYB5q80CExaiTeusAjc.e6Toji.AtNWN1wj0FloSPHrobLJhfBSe',  'Jane Smith',     'jane@example.com',   '0800000003', 'user');
 
 INSERT INTO equipment (name, description, category, total_quantity, available_qty) VALUES
 ('Football',           'Standard size 5 football',            'ball',    10, 10),
